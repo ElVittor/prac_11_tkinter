@@ -1,0 +1,38 @@
+from tkinter import *
+    
+#Crear ventana
+    
+ventana=Tk()
+ventana.title("Ejemplo de ventana practica 11")
+ventana.geometry("600x400")    
+
+#Agregar Frames
+
+Seccion1 = Frame(ventana,bg="red")
+Seccion1.pack(expand=True,fill='both') #Expand usa todo el espacio disponible, fill=rellena (both rellena x y Y)
+
+Seccion2 = Frame(ventana,bg="gray")
+Seccion2.pack(expand=True,fill='both')
+
+Seccion3 = Frame(ventana,bg="purple")
+Seccion3.pack(expand=True,fill='both')
+
+#agregamos botones
+
+#(Donde se ubica, texto que dice,fg"Color del texto")
+botonazul = Button(Seccion1,text="Soy el botón Azúl",fg="blue") 
+#Usando place, usamos un lugar estático defino donde lo puedo ponder, tambien la altura y ancho, usando su posicion en x,y y usando heih y with
+botonazul.place(x=60,y=60,width=100,height=30)
+
+botonnegro = Button(Seccion2,text="Botón negro",fg="black")
+#grid cuadricula el objeto en filas y columnas para posicionar el objeto
+botonnegro.grid(row=0,column=0)
+
+botonamarillo = Button(Seccion2,text="Botón Amarillo",fg="Yellow")
+botonamarillo.grid(row=1,column=1)
+
+botonverde = Button(Seccion3,text="Botón Verde",fg="Green")
+botonverde.pack()
+
+#Metodo main para la ejecución
+ventana.mainloop()
