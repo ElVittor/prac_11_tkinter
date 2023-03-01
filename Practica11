@@ -1,4 +1,17 @@
-from tkinter import *
+from tkinter import Tk,Button,Frame,messagebox
+
+# Paso 5. Agregar funcion de mensaje
+
+def MostrarMensaje():
+    messagebox.showinfo("Información","Todo falló perfecto")
+    messagebox.showerror("Error","Perdón te fallé")
+    print(messagebox.askyesnocancel("Pregunta","Seguro quiere guardar?"))
+    
+#Función Agregar Botón
+def AgregarBoton():
+    botonverde.config(text="+",bg="green",fg="white")
+    botonnuevo=Button(Seccion3,text="Botón Nuevo")
+    botonnuevo.pack()
     
 #Crear ventana
     
@@ -20,7 +33,7 @@ Seccion3.pack(expand=True,fill='both')
 #agregamos botones
 
 #(Donde se ubica, texto que dice,fg"Color del texto")
-botonazul = Button(Seccion1,text="Soy el botón Azúl",fg="blue") 
+botonazul = Button(Seccion1,text="Soy el botón Azúl",fg="blue",command=MostrarMensaje) 
 #Usando place, usamos un lugar estático defino donde lo puedo ponder, tambien la altura y ancho, usando su posicion en x,y y usando heih y with
 botonazul.place(x=60,y=60,width=100,height=30)
 
@@ -28,11 +41,20 @@ botonnegro = Button(Seccion2,text="Botón negro",fg="black")
 #grid cuadricula el objeto en filas y columnas para posicionar el objeto
 botonnegro.grid(row=0,column=0)
 
-botonamarillo = Button(Seccion2,text="Botón Amarillo",fg="Yellow")
+botonamarillo = Button(Seccion2,text="Botón Amarillo",fg="Yellow") 
 botonamarillo.grid(row=1,column=1)
 
-botonverde = Button(Seccion3,text="Botón Verde",fg="Green")
+botonverde = Button(Seccion3,text="Botón Verde",fg="Green",command=AgregarBoton)
 botonverde.pack()
 
-#Metodo main para la ejecución
+"""  para seleccionar color especifico, podemos usar color picker, y poner su codigo exadecimal"""
+"""agregaando un # antes del numero """
+botonacolor = Button(Seccion2,text="Botón de color",fg="#a5b2ff") 
+botonacolor.grid(row=2,column=2)
+
+# Posicionar los Widgets
+
+
+#Metodo main para la ejecución}
+
 ventana.mainloop()
